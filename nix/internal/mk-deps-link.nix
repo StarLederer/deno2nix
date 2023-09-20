@@ -21,6 +21,7 @@ in
             path = fetchurl {
               inherit url sha256;
               name = sanitizeDerivationName (baseNameOf url);
+              curlOpts = ["-H", "User-Agent: Deno/1.0"];
             };
           }
           {
